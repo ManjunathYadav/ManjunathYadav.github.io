@@ -8,60 +8,96 @@
   <style>
     body {
       margin: 0; /* Reset default margin */
+      font-family: Arial, sans-serif; /* Choose your preferred font */
     }
 
+    /* Common styles for container and sections */
     .container {
       width: 80%; /* Set container width to 80% of the screen width */
       margin: 0 auto; /* Center the container horizontally */
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start; /* Align items at the top */
       padding: 0 10px; /* Add padding to the sides */
     }
 
-    .left-side {
-      width: 25%;
-      background-color: #daf1f0;
+    .section {
+      margin-bottom: 20px; /* Space between sections */
+    }
+
+    /* Styles for left and right sides */
+    .left-side, .right-side {
       padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    }
+
+    .left-side {
+      background-color: #daf1f0;
       border-top-left-radius: 20px; /* Curved top-left corner */
       border-bottom-left-radius: 20px; /* Curved bottom-left corner */
     }
 
+    .right-side {
+      background-color: #d6dadc;
+      border-top-right-radius: 20px; /* Curved top-right corner */
+      border-bottom-right-radius: 20px; /* Curved bottom-right corner */
+    }
+
+    /* Image style */
     .profile-img {
       width: 200px; /* Adjust the size of the image */
       height: 200px; /* Adjust the size of the image */
       border-radius: 50%; /* Make the image circular */
       object-fit: cover;
-      align-self: center; /* Align image to the center horizontally */
+      margin-bottom: 10px;
     }
 
-    .name {
-      text-align: center;
-      margin-top: 10px;
+    /* Responsive styles using media queries */
+    @media screen and (max-width: 768px) {
+      .container {
+        width: 100%; /* Full width for smaller screens */
+      }
+
+      .left-side, .right-side {
+        width: 100%;
+        border-radius: 0; /* Remove rounded corners */
+      }
+
+      .right-side {
+        padding: 10px; /* Adjust padding for smaller screens */
+      }
+
+      .profile-img {
+        width: 150px; /* Decrease image size for smaller screens */
+        height: 150px; /* Decrease image size for smaller screens */
+      }
     }
 
-    .details {
-      text-align: left; /* Align other details to the left */
+    .contact-me,
+    .about-me {
+      text-align: left;
     }
 
     .details p {
       margin: 5px 0;
     }
 
-    .right-side {
-      width: 67%;
-      background-color: #d6dadc;
-      padding: 20px;
-      border-top-right-radius: 20px; /* Curved top-right corner */
-      border-bottom-right-radius: 20px; /* Curved bottom-right corner */
+    .details strong {
+      margin-right: 5px;
     }
 
-    .right-side p {
-    margin-bottom: 20px; /* Adjust the value to increase or decrease the gap */
-  }
+    .details h2 {
+      margin-bottom: 10px;
+    }
+
+    .career-objective,
+    .technical-skills,
+    .devices-platforms,
+    .employment-details,
+    .reference-videos,
+    .educational-details {
+      margin-bottom: 20px;
+    }
+
+    .reference-videos iframe {
+      margin-bottom: 10px;
+    }
     /* Add more CSS styles as needed */
   </style>
 </head>
