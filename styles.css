@@ -1,8 +1,24 @@
 body {
   padding: 25px;
-  margin: 0 30px; /* This should add margin to both left and right */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.left-side {
+  width: 15%; /* Adjust the width as needed */
+}
+
+.right-side {
+  width: 75%; /* Adjust the width as needed */
 }
 
 .title {
   color: #5C6AC4;
 }
+
