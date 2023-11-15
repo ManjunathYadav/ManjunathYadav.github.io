@@ -14,7 +14,7 @@
       margin: 0 auto; /* Center the container horizontally */
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start; /* Align items at the top */
       padding: 0 20px; /* Add padding to the sides */
     }
 
@@ -24,7 +24,7 @@
       padding: 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start; /* Align items at the start */
     }
 
     .profile-img {
@@ -32,13 +32,12 @@
       height: 150px; /* Adjust the size of the image */
       border-radius: 50%; /* Make the image circular */
       object-fit: cover;
-      align-self: flex-start; /* Align image to the top */
+      align-self: center; /* Align image to the center horizontally */
     }
 
     .name {
       text-align: center;
       margin-top: 10px;
-      align-self: flex-start; /* Align name to the top */
     }
 
     .details {
