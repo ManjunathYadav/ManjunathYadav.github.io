@@ -1,14 +1,9 @@
-body{
+body {
   padding: 25px;
-}
-.title {
-	color: #5C6AC4;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-left: 30px; /* Adjust as needed */
-  margin-right: 30px; /* Adjust as needed */
+.title {
+  color: #5C6AC4;
 }
