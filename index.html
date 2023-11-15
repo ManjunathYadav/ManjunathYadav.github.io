@@ -6,21 +6,20 @@
   <title>Manjunath</title>
   <style>
     .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-left: 20px;
-        margin-right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 0 20px; /* Gap of 20px on both sides of the container */
     }
     .left-side {
-      width: 20%;
-      background-color: #daf1f0; /* Background color for the left side */
-      padding: 20px; /* Adding some padding for better appearance */
+      width: calc(20% - 10px); /* Adjusted width to account for the gap */
+      background-color: #daf1f0;
+      padding: 20px;
     }
     .right-side {
-      width: 70%;
-      background-color: #d6dadc; /* Background color for the right side */
-      padding: 20px; /* Adding some padding for better appearance */
+      width: calc(70% - 10px); /* Adjusted width to account for the gap */
+      background-color: #d6dadc;
+      padding: 20px;
     }
     /* Add more CSS styles as needed */
   </style>
