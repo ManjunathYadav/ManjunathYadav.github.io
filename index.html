@@ -31,11 +31,13 @@
     }
 
     .profile-img {
-      width: 200px; /* Adjust the size of the image */
-      height: 200px; /* Adjust the size of the image */
+      width: 200px;
+      height: 200px;
       border-radius: 50%; /* Make the image circular */
       object-fit: cover;
-      align-self: center; /* Align image to the center horizontally */
+      align-self: center;
+      /* Add this line to ensure the image maintains its aspect ratio */
+      aspect-ratio: 1/1;
     }
 
     .name {
