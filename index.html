@@ -7,70 +7,62 @@
   <title>Manjunath</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
+      margin: 0; /* Reset default margin */
     }
 
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 10px;
+      width: 80%; /* Set container width to 80% of the screen width */
+      margin: 0 auto; /* Center the container horizontally */
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start; /* Align items at the top */
+      padding: 0 10px; /* Add padding to the sides */
     }
 
     .left-side {
-      width: 100%;
+      width: 25%;
       background-color: #daf1f0;
       padding: 20px;
-      border-radius: 20px;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top-left-radius: 20px; /* Curved top-left corner */
+      border-bottom-left-radius: 20px; /* Curved bottom-left corner */
     }
 
     .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
+      width: 200px; /* Adjust the size of the image */
+      height: 200px; /* Adjust the size of the image */
+      border-radius: 50%; /* Make the image circular */
       object-fit: cover;
+      align-self: center; /* Align image to the center horizontally */
     }
 
     .name {
+      text-align: center;
       margin-top: 10px;
     }
 
     .details {
-      margin-top: 20px;
+      text-align: left; /* Align other details to the left */
+    }
+
+    .details p {
+      margin: 5px 0;
     }
 
     .right-side {
-      width: 100%;
+      width: 67%;
       background-color: #d6dadc;
       padding: 20px;
-      border-radius: 20px;
-      margin-top: 20px;
-      text-align: justify;
+      border-top-right-radius: 20px; /* Curved top-right corner */
+      border-bottom-right-radius: 20px; /* Curved bottom-right corner */
     }
 
-    .right-side p,
-    .right-side ul {
-      margin-bottom: 15px;
-    }
-
-    iframe {
-      width: 100%;
-    }
-
-    @media (min-width: 768px) {
-      .left-side {
-        width: 30%;
-      }
-
-      .right-side {
-        width: 65%;
-        margin-left: 5%;
-        margin-top: 0;
-      }
-    }
+    .right-side p {
+    margin-bottom: 20px; /* Adjust the value to increase or decrease the gap */
+  }
+    /* Add more CSS styles as needed */
   </style>
 </head>
 <body>
