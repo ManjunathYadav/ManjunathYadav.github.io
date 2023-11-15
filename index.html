@@ -5,19 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manjunath</title>
   <style>
+    body {
+      margin: 0; /* Reset default margin */
+    }
+
     .container {
+      width: 75%; /* Set container width to 75% of the screen width */
+      margin: 0 auto; /* Center the container horizontally */
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin: 0 20px; /* Gap of 20px on both sides of the container */
+      align-items: center;
+      padding: 0 20px; /* Add padding to the sides */
     }
+
     .left-side {
-      width: calc(20% - 10px); /* Adjusted width to account for the gap */
+      width: 20%;
       background-color: #daf1f0;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
+    .profile-img {
+      width: 150px; /* Adjust the size of the image */
+      height: 150px; /* Adjust the size of the image */
+      border-radius: 50%; /* Make the image circular */
+      object-fit: cover;
+    }
+
+    .name {
+      text-align: center;
+      margin-top: 10px;
+    }
+
     .right-side {
-      width: calc(70% - 10px); /* Adjusted width to account for the gap */
+      width: 55%; /* Adjusted width to fit the remaining space */
       background-color: #d6dadc;
       padding: 20px;
     }
@@ -27,7 +50,7 @@
 <body>
   <div class="container">
     <div class="left-side">
-      <h1>Manjunath Halawal</h1>
+      <h1 class="name">Manjunath Halawal</h1>
       <img src="Profile.jpg" alt="Your Photo" width="200" height="200">
       <p><strong>Designation:</strong>: Unity Developer</p>
       <p><strong>Number:</strong>: 9164626239</p>
