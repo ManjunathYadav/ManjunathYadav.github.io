@@ -3,282 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
-  <title>Manjunath</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <title>Manjunath Halawal | Senior Unity Developer Portfolio</title>
   <style>
-    body {
-      margin: 0; /* Reset default margin */
+    :root {
+      --primary: #008080;
+      --secondary: #daf1f0;
+      --dark: #333;
+      --light: #f4f7f8;
+      --accent: #004d4d;
     }
-
-    .container {
-      width: 80%; /* Set container width to 80% of the screen width */
-      margin: 0 auto; /* Center the container horizontally */
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start; /* Align items at the top */
-      padding: 0 10px; /* Add padding to the sides */
-    }
-
-    .left-side {
-      width: 25%;
-      background-color: #daf1f0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-top-left-radius: 20px; /* Curved top-left corner */
-      border-bottom-left-radius: 20px; /* Curved bottom-left corner */
-    }
-
-    .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%; /* Make the image circular */
-      object-fit: cover;
-      align-self: center;
-    }
-
-    .name {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    .details {
-      text-align: left; /* Align other details to the left */
-    }
-
-    .details p {
-      margin: 5px 0;
-    }
-
-    .right-side {
-      width: 67%;
-      background-color: #d6dadc;
-      padding: 20px;
-      border-top-right-radius: 20px; /* Curved top-right corner */
-      border-bottom-right-radius: 20px; /* Curved bottom-right corner */
-    }
-
-    .right-side p {
-    margin-bottom: 20px; /* Adjust the value to increase or decrease the gap */
-    }
-
-    .video-container {
-      position: relative;
-      padding-bottom: 50%; /* 16:9 aspect ratio (change as needed) */
-      overflow: hidden;
-    }
+    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+    .container { width: 95%; max-width: 1250px; margin: 30px auto; display: flex; flex-wrap: wrap; box-shadow: 0 10px 40px rgba(0,0,0,0.2); border-radius: 20px; overflow: hidden; background: #fff; }
     
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 90%;
-      height: 90%;
-    }
+    /* Sidebar */
+    .left-side { flex: 1; min-width: 320px; background-color: var(--secondary); padding: 40px 25px; border-right: 1px solid #ddd; }
+    .profile-img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 20px; border: 6px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .name { text-align: center; font-size: 1.8rem; color: var(--accent); margin: 0; }
+    .designation { text-align: center; font-weight: bold; color: var(--primary); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+    h3 { font-size: 1.1rem; border-bottom: 2px solid var(--primary); padding-bottom: 5px; margin-top: 30px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .contact-item { margin: 15px 0; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
+    .contact-item a { color: var(--dark); text-decoration: none; }
+    .contact-item a:hover { color: var(--primary); text-decoration: underline; }
+
+    /* Main Content */
+    .right-side { flex: 2.8; padding: 45px; min-width: 350px; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 12px; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+    .job-entry { margin-bottom: 30px; position: relative; padding-left: 20px; border-left: 3px solid var(--secondary); }
+    .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .company { font-weight: bold; font-size: 1.15rem; color: var(--accent); }
+    .duration { font-style: italic; color: #666; font-size: 0.9rem; background: #eee; padding: 2px 8px; border-radius: 4px; }
+    .position { display: block; font-weight: 600; color: var(--primary); margin-bottom: 5px; }
+    ul { padding-left: 20px; margin: 10px 0; }
+    li { margin-bottom: 8px; }
+
+    /* Project Tags */
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .tag { font-size: 0.8rem; background: #e0f2f1; color: #00695c; padding: 2px 10px; border-radius: 12px; border: 1px solid #b2dfdb; }
+
+    /* Video Section */
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .video-card { background: #fff; padding: 12px; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s; }
+    .video-card:hover { transform: translateY(-5px); }
+    .video-title { font-weight: bold; margin-bottom: 10px; font-size: 0.95rem; text-align: center; color: var(--accent); }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .left-side,
-      .right-side {
-        width: 100%;
-        border-radius: 0; /* Remove border radius for responsiveness */
-        padding: 20px;
-      }
-    /* Add more CSS styles as needed */
+      .container { width: 100%; margin: 0; border-radius: 0; }
+      .left-side, .right-side { flex: none; width: 100%; padding: 30px 20px; }
+      .job-header { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="left-side">
-      <h1 class="name">Manjunath Halawal</h1>
-      <img src="manjunath.png" alt="Your Photo" width="200" height="200">
-      <p><strong>Designation</strong>: Unity Developer</p>
 
-    <div class="contact-me">
-      <h2>Contact details</h2>
-      <p><strong>Number</strong>: 9164626239</p>
-      <p><strong>Email ID</strong>: manjuyadav9164@gmail.com</p>
+<div class="container">
+  <aside class="left-side">
+    <img src="manjunath.png" alt="Manjunath Halawal" class="profile-img">
+    <h1 class="name">Manjunath Halawal</h1>
+    <p class="designation">Senior Unity Developer</p>
 
-    <div class="resume-download">
-      <h2>Resume</h2>
-      <p>
-      <!-- <a href="https://drive.google.com/uc?export=download&id=1MPUlNqeTU1S6g29Tgee0GFgvHWhs3qu_" target="_blank">
-        Manjunath&nbsp;&nbsp;&nbsp;<i class="fas fa-file-pdf"></i>
-      </a> -->
-      <a href="https://drive.google.com/uc?export=download&id=1zivsW3nEnShQ11hfBmCbtYKckdZUSrAp" target="_blank">
-        <i class="fas fa-file-pdf"></i>&nbsp;Manjunath&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>
-      </a>
-      </p>
+    <div class="contact-section">
+      <h3><i class="fas fa-address-book"></i> CONTACT DETAILS</h3>
+      <div class="contact-item"><i class="fas fa-phone"></i> +91-9164626239</div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:manjuyadav9164@gmail.com">manjuyadav9164@gmail.com</a></div>
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Basavanapura, Bengaluru, 560083</div>
 
-    <!-- About Me Section -->
-    <div class="about-me">
-      <h2>About Me</h2>
-      <p>I'm a passionate Unity Developer with overall 3.9 years of experience as a full time and freelancer. I have a strong foundation in C# and the Unity Game Engine, specializing in AR and VR development. My expertise extends to XR Interaction Toolkit, AR Core, AR Foundation, and Firebase integration.
-      In my current role at AfterNow Labs, I contribute to the development of ANPrez, a versatile multi-platform meeting and presentation application, supporting a wide range of devices and operating systems, from Android to Hololens.</p>
+      <h3><i class="fas fa-link"></i> WEBSITES</h3>
+      <div class="contact-item"><i class="fas fa-globe"></i> <a href="https://manjunathyadav.github.io/" target="_blank">Portfolio Website</a></div>
+      <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/manju-halawal-600320b8" target="_blank">LinkedIn Profile</a></div>
 
-      <p>My previous experience at WoWexp Technologies allowed me to explore the realms of AR and VR extensively. I developed various applications, including AR filters and educational VR experiences, and was a key player in creating "WoWMeet," India's first VR meeting application.
-      During my internship at LaunchShip Technologies, I honed my game development skills, creating 2D and 3D games while focusing on writing clean, reusable code and debugging.</p>
-      
-      <p>As a Web Developer at Celtic Global Technologies, I worked on the "PetsBuzz" project, utilizing Ember.js and Node.js to build a Windows and Android application.
-      I'm dedicated to pushing the boundaries of what's possible in the world of Unity development. You can check out some of my work at https://interioverse.io and Google Play.</p>
-      <!-- Add more personal information as needed -->
+      <h3><i class="fas fa-language"></i> LANGUAGES</h3>
+      <p>Kannada, English, Hindi</p>
+
+      <h3><i class="fas fa-graduation-cap"></i> EDUCATION</h3>
+      <p><strong>B.E - Electronics & Communication</strong><br>
+      Govt Engineering College, Haveri<br>
+      Visvesvaraya Technological University (2014)<br>
+      Aggregate: 56.43%</p>
+      <p><strong>SSLC:</strong> 82% (2008)<br><strong>PUC:</strong> 59.67%</p>
     </div>
-    </div>
-    </div>
-    </div>
-    <div class="right-side">
-      <h2><i class="fas fa-briefcase"></i> CAREER OBJECTIVE</h2>
-      <p>To work with a team in a challenging and competitive environment where I could improve my knowledge, capabilities as a Software Developer, and put them to use for the development of the organization.</p>
-      
+  </aside>
+
+  <main class="right-side">
+    <section>
+      <h2><i class="fas fa-user-circle"></i> ABOUT ME</h2>
+      <p>I am a dedicated Unity Developer with 4.8 years of Full-time experience and 2.2 years of Freelance experience. I have extensive experience in creating immersive applications, including VR and AR experiences, managing teams, and leading successful projects across various platforms. I thrive in collaborative environments leveraging WebGL, AWS, and modern game development principles.</p>
+    </section>
+
+    <section>
       <h2><i class="fas fa-code"></i> TECHNICAL SKILLS</h2>
-      <ul>
-        <li>C#</li>
-        <li>Unity Game Engine</li>
-        <li>AR, VR, MR</li>
-        <li>XR Interaction Toolkit, Mixed Reality Toolkit</li>
-        <li>OpenXR, AR Core, AR Foundation, Multiplayer Framework (Photon)</li>
-        <li>Firebase</li>
-        <li>REST API and SDK Integration</li>
-        <li>UI/UX Design using Figma</li>
-        <li>Github</li>
-        <!-- Add more skills -->
-      </ul>
-      
-      <h2><i class="fas fa-laptop"></i> DEVICES/PLATFORMS</h2>
-      <ul>
-        <li>Android</li>
-        <li>WebGL</li>
-        <li>Windows</li>
-        <li>VR Devices (Quest, Quest 2)</li>
-        <li>AR devices (Android)</li>
-        <!-- Add more devices/platforms -->
-      </ul>
-      
-      <h2><i class="fas fa-briefcase"></i> FULLTIME EMPLOYMENT DETAILS</h2>
-      <p><strong>1.	AfterNow Labs Pvt. Ltd. - Unity Developer (April 2023 - Present)</strong></p>
-      <ul>
-        <li>Working on "ANPrez," a multi-platform meeting and presentation application across Android, iOS, Quest 1 & 2, Hololens, Windows, Mac, Linux.</li>
-        <!-- Add more employment details -->
-      </ul>
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <ul>
+          <li><strong>Engine:</strong> Unity (Latest 6.2), XRIT, BRIT</li>
+          <li><strong>Languages:</strong> C#, Python</li>
+          <li><strong>Development:</strong> VS Community 2022, VS Code</li>
+          <li><strong>Networking:</strong> Photon, REST API Integration</li>
+        </ul>
+        <ul>
+          <li><strong>Cloud/Tools:</strong> AWS, Firebase, Github</li>
+          <li><strong>Platforms:</strong> Quest 1/2/3, Hololens, WebGL, Android, Windows, iOS, Linux</li>
+          <li><strong>Specialized:</strong> Motive, Innoactive, Figma (UI/UX), SCORM</li>
+        </ul>
+      </div>
+    </section>
 
-      <p><strong>2.	WoWExp Technologies Pvt. Ltd. - Metaverse Developer (February 2021 - February 2023</strong></p>
-      <ul>
-        <li>"WoWMeet" VR meeting application</li>
-        <li>VR warehouse training</li>
-        <li>VR educational applications (AICTE)</li>
-        <li>VR Dino museum and Art gallery</li>
-        <li>VR Game zone</li>
-        <li>Real time solar panel installation</li>
-        <li>AR applications for Karnataka tourism</li>
-        <li>WoWTravel (AR app)</li>
-        <li>AR Tourism Portal</li>
-        <li>WoW Decor (AR furniture App)</li>
-        <li>MiniMeta</li>
-        <!-- Add more employment details -->
-      </ul>
+    <section>
+      <h2><i class="fas fa-briefcase"></i> WORK EXPERIENCE</h2>
       
-      <h2><i class="fas fa-briefcase"></i> FREELANCER EMPLOYMENT DETAILS</h2>
-      
-      <p><strong>1.	Interioverse Pvt. Ltd Pvt. Ltd. - Unity Developer Freelance (April 2023 - October 2023)</strong></p>
-      <ul>
-        <li>Worked as a freelance Unity Developer for the project called Interioverse from April 2023 to October 2023. Interioverse is an online Furniture designing tool. Please have a look on the below website for more details</li>
-        <li>Language and Tool used - C# and Unity</li>
-        <li><a href="https://interioverse.io" target="_blank">Interioverse</a></li>
-        <!-- Add more employment details -->
-      </ul>
-      
-      <p><strong>2.	Celtic Global Technologies Pvt. Ltd. - Web Developer Freelance (January 2019 - January 2020)</strong></p>
-      <p>I worked as Web Developer (Freelancer) for 1 year in Celtic Global Technologies.</p>
-      <p><strong>Technologies Used:</strong> Ember.js MVC front-end framework version 2.4, Node.js server-side scripting framework for API, PostgreSQL version 9.5 as database management system.</p>
-      <ul>
-        <li><strong>Project:</strong> PetsBuzz</li>
-        <li><strong>Platforms:</strong> Windows, Android</li>
-        <li><strong>Tools Used:</strong> Visual Studio</li>
-        <li><strong>Devices support:</strong> Desktops and Mobiles.</li>
-        <li><strong>Team Size:</strong> 4 Members</li>
-        <li><strong>Followed Guidelines:</strong> Software Development life cycle, Optimization.</li>
-        <li><strong>Reporting:</strong> Project Owner</li>
-      </ul>
-      
-      <h2><i class="fas fa-link"></i> REFERENCE VIDEOS</h2>
-      <ul>
-        <p><strong>Interioverse</strong></p>
-        <div class="video-container">
-          <iframe src="https://drive.google.com/file/d/1NEj9m6oPL8kMdRJ_getv2W0pL2xu4FJ8/preview" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">LTIMindtree</span>
+          <span class="duration">Dec 2023 – Present (2 Years)</span>
         </div>
-        <p><strong>WoWMeet</strong></p>
-        <div class="video-container">
-          <iframe src="https://drive.google.com/file/d/1oeNAinVpS1Cg0AN6HsgAmsE9Rj3zCdbI/preview" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+        <span class="position">Senior IoT Engineer - Unity</span>
+        <ul>
+          <li>Developing XR training applications using Unity and Motive.</li>
+          <li>Contributing to multiplatform application development for Quest and industry-standard devices.</li>
+        </ul>
+      </div>
+
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">AfterNow Labs Pvt Ltd.</span>
+          <span class="duration">Apr 2023 – Oct 2023 (7 Months)</span>
         </div>
-        
-        <p><strong>VR warehouse</strong></p>
-        <div class="video-container">
-         <iframe src="https://drive.google.com/file/d/1oJ2sEXtZp7IDF6LlwkE6-JBUGZsOFOCO/preview" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+        <span class="position">Unity Developer</span>
+        <ul>
+          <li>Worked on "ANPrez," a multi-platform meeting/presentation application across Android, iOS, Quest 1 & 2, Hololens, Windows, Mac, and Linux.</li>
+        </ul>
+      </div>
+
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">WoWExp Technologies Pvt. Ltd.</span>
+          <span class="duration">Feb 2021 – Feb 2023 (2.1 Years)</span>
         </div>
-        <p><strong>VR Game zone</strong></p>
-        <div class="video-container">
-        <iframe src="https://drive.google.com/file/d/16WpHsbFVJUDk53VKdaEiTefHv16UHHWc/preview" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+        <span class="position">Metaverse Developer</span>
+        <div class="project-tags">
+          <span class="tag">WoWMeet VR</span> <span class="tag">Warehouse Training</span> <span class="tag">AICTE Education</span> <span class="tag">Dino Museum</span> <span class="tag">Solar Installation VR</span> <span class="tag">Karnataka Tourism AR</span> <span class="tag">WoWTravel</span> <span class="tag">WoWDecor</span> <span class="tag">MiniMeta</span>
         </div>
-        <p><strong>VR Roller coaster</strong></p>
-        <div class="video-container">
-          <iframe src="https://drive.google.com/file/d/1LwCNfPA3Ei0pzery_6nVf5EQ9rHzYXDa/preview" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+        <ul>
+          <li>Developed India's first VR meeting application and various industry training modules.</li>
+          <li>Created immersive AR/VR experiences including museums, art galleries, and tourism portals.</li>
+        </ul>
+      </div>
+
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">Interioverse Pvt. Ltd. (Freelance)</span>
+          <span class="duration">Aug 2018 – Sept 2020 (2.2 Years)</span>
         </div>
-        <p><strong>VR Go Bowling</strong></p>
-        <div class="video-container">
-          <iframe src="https://drive.google.com/file/d/1J_e9sJSUJzPayB1L6iot7TxjM8mk7jEt/preview" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <p><strong>Rath Yatra</strong></p>
-        <div class="video-container">
-          <iframe src="https://drive.google.com/file/d/1s0XCPoaX5fyXZD2rPUmxeFS8uQlXnYNv/preview" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <p><strong>Dino museum</strong></p>
-        <div class="video-container">
-          <iframe src="https://drive.google.com/file/d/1UlJ5SeT0yf5Hy3pZNv-kMjZEFS9TX4tc/preview" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <p><strong>ChatBot</strong></p>
-        <div class="video-container">
-          <iframe src="https://drive.google.com/file/d/1SB5pvolSPs1vxIc84ZV3WN9gF9KFsYt0/preview" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <p><strong>Unilever</strong></p>
-        <div class="video-container">
-          <iframe src="https://drive.google.com/file/d/1ua3iYB0cHZoFCpTTx-SHS0elqso3ocv3/preview" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <p><strong>MiniMeta</strong></p>
-        <li><a href="https://play.google.com/store/apps/details?id=com.WoWExp.MiniMeta&hl=en&gl=US">MiniMeta</a></li>
-        
-        <!-- 
-        <li><a href="https://drive.google.com/file/d/1oeNAinVpS1Cg0AN6HsgAmsE9Rj3zCdbI/view?usp=share_link">WoWMeet</a></li>
-        <li><a href="https://www.linkedin.com/posts/manjunath-halawal-600320b8_wowmeet-wowexp-metaversenews-activity-6974973913944514561-xeI_?utm_source=share&utm_medium=member_desktop">WoWMeet linkedIn Post</a></li>
-        <li><a href="https://drive.google.com/file/d/1oJ2sEXtZp7IDF6LlwkE6-JBUGZsOFOCO/view?usp=share_link">VR warehouse</a></li>
-        <li><a href="https://drive.google.com/file/d/16WpHsbFVJUDk53VKdaEiTefHv16UHHWc/view?usp=share_link">VR Game zone</a></li>
-        <li><a href="https://drive.google.com/file/d/1LwCNfPA3Ei0pzery_6nVf5EQ9rHzYXDa/view?usp=share_link">VR Roller coaster</a></li>
-        <li><a href="https://drive.google.com/file/d/1J_e9sJSUJzPayB1L6iot7TxjM8mk7jEt/view?usp=share_link">VR Go Bowling</a></li>
-        <li><a href="https://drive.google.com/file/d/1s0XCPoaX5fyXZD2rPUmxeFS8uQlXnYNv/view?usp=share_link">Rath Yatra</a></li>
-        <li><a href="https://drive.google.com/file/d/1UlJ5SeT0yf5Hy3pZNv-kMjZEFS9TX4tc/view?usp=share_link">Dino museum</a></li>
-        <li><a href="https://drive.google.com/file/d/1SB5pvolSPs1vxIc84ZV3WN9gF9KFsYt0/view?usp=share_link">ChatBot</a></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.WoWExp.MiniMeta&hl=en&gl=US">MiniMeta</a></li>
-        <li><a href="https://drive.google.com/file/d/1ua3iYB0cHZoFCpTTx-SHS0elqso3ocv3/view?usp=share_link">Unilever</a></li>
-        -->
-        <!-- Add more reference links -->
-      </ul>
-      
-      <h2><i class="fas fa-graduation-cap"></i> EDUCATIONAL DETAILS</h2>
-      <ul>
-        <li><strong>SSLC</strong> - Karnataka Board of Examination (2008) - 82%</li>
-        <li><strong>PUC</strong> - Karnataka State Secondary Education Examination Board - 59.67%</li>
-        <li><strong>BE</strong> in Electronics and Communication from Government Engineering College, Haveri in 2015 with the percentage of 56.43</li>
-        <!-- Add more educational details -->
-      </ul>
-    </div>
-  </div>
+        <span class="position">Unity Developer</span>
+        <ul>
+          <li>Developed "FloorDesign," a WebGL application for drawing floor plans, generating walls, and placing furniture from catalogs.</li>
+          <li>Implemented features: Applying colors/textures, PDF catalog generation, and AWS integration for storing user designs.</li>
+          <li>Built a multiplatform showroom application for furniture demonstration with multiplayer support.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2><i class="fas fa-video"></i> REFERENCE VIDEOS & PROJECTS</h2>
+      <div class="video-grid">
+        <div class="video-card"><div class="video-title">Interioverse / FloorDesign</div><div class="video-container"><iframe src="https://drive.google.com/file/d/1NEj9m6oPL8kMdRJ_getv2W0pL2xu4FJ8/preview"></iframe></div></div>
+        <div class="video-card"><div class="video-title">WoWMeet VR Meeting</div><div class="video-container"><iframe src="https://drive.google.com/file/d/1oeNAinVpS1Cg0AN6HsgAmsE9Rj3zCdbI/preview"></iframe></div></div>
+        <div class="video-card"><div class="video-title">VR Warehouse Training</div><div class="video-container"><iframe src="https://drive.google.com/file/d/1oJ2sEXtZp7IDF6LlwkE6-JBUGZsOFOCO/preview"></iframe></div></div>
+        <div class="video-card"><div class="video-title">AI ChatBot Integration</div><div class="video-container"><iframe src="https://drive.google.com/file/d/1SB5pvolSPs1vxIc84ZV3WN9gF9KFsYt0/preview"></iframe></div></div>
+        <div class="video-card"><div class="video-title">VR Go Bowling</div><div class="video-container"><iframe src="https://drive.google.com/file/d/1J_e9sJSUJzPayB1L6iot7TxjM8mk7jEt/preview"></iframe></div></div>
+        <div class="video-card"><div class="video-title">Unilever Training App</div><div class="video-container"><iframe src="https://drive.google.com/file/d/1ua3iYB0cHZoFCpTTx-SHS0elqso3ocv3/preview"></iframe></div></div>
+      </div>
+      <p style="margin-top:25px; text-align: center;">
+        <i class="fab fa-google-play"></i> <a href="https://play.google.com/store/apps/details?id=com.WoWExp.MiniMeta&hl=en&gl=US" target="_blank"><strong>View MiniMeta on Play Store</strong></a>
+      </p>
+    </section>
+  </main>
+</div>
+
 </body>
 </html>
